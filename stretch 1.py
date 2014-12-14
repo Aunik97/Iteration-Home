@@ -3,16 +3,33 @@
 # It should print 5 values on each line in neat columns.
 
 
-#number = int(input("please enter a number"))
-#for count in range(1, number+1):
- #   print(number**2)
+
+def function1():
     
     
-count = 0
+
+
+
+
+    string = "" 
+    count = 0
+    number = int(input("please enter a number"))
+    while count < number:
+        count = count + 1
+        if count % 5:
+            string = string + str((count) ** 2)+ ","
+        else:
+            string = string + str((count) ** 2)+ ","
+            print(string)
+            string = ""
+    print(string)    
+
+
+square = [] 
+columns = 3
 number = int(input("please enter a number"))
-while count <= number:
-    count = count + 1
-    if count <= number:
-         print((number - count )** 2)
-    else:
-        print("programe end")
+for x in range(1,number+1):
+    square.append("{0:>5}".format(x**2))
+for i in range(0, len(square),columns):
+    print(",".join(square[i:i+columns]))
+
